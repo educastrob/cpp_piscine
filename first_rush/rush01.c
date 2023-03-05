@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mchamma <mchamma@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ancarol4 <ancarol4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 10:09:17 by mchamma           #+#    #+#             */
-/*   Updated: 2023/03/05 14:37:12 by mchamma          ###   ########.fr       */
+/*   Updated: 2023/03/05 15:43:26 by ancarol4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	rush(int x, int y)
 
 	amount_columns = 0;
 	amount_lines = 0;
-
 	while (++amount_lines <= y)
 	{
 		while (++amount_columns <= x)
