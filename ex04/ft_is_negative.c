@@ -6,7 +6,7 @@
 /*   By: edcastro <edcastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:30:58 by edcastro          #+#    #+#             */
-/*   Updated: 2023/03/07 13:40:11 by edcastro         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:53:23 by edcastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	ft_is_negative(int n)
 {
 	if (n < 0)
+	{
 		write(1, "N", 1);
+	}
 	else
 		write(1, "P", 1);
 }
