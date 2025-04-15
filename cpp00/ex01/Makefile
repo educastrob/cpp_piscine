@@ -20,7 +20,7 @@ FILE_EXTENSION	= .cpp
 SRCS_PATH		= ./src
 INCLUDE_PATH	= ./include
 SRCS			= 
-MAIN			= PhoneBook.cpp Contacts.cpp
+MAIN			= PhoneBook.cpp Contact.cpp main.cpp
 
 ################################################################################
 #                                  Makefile  objs                              #

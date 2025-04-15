@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contacts.hpp                                       :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:43:44 by educastro         #+#    #+#             */
-/*   Updated: 2025/04/02 02:30:11 by educastro        ###   ########.fr       */
+/*   Updated: 2025/04/15 19:44:53 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACTS_H
-# define CONTACTS_H
+#ifndef CONTACT_H
+# define CONTACT_H
 
-class Contacts
-{
+#include <iostream>
+#include <iomanip>
+
+class	Contact {
 	private:
-		/* data */
+		std::string firstName;
+		std::string lastName;
+		std::string nickname;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
+		
 	public:
-		Contacts(/* args */);
-		~Contacts();
+		Contact(void);
+		Contact(std::string firstName, std::string lastName, std::string nickname, \
+			std::string phoneNumber, std::string darkestSecret);
+		
+		~Contact();
+		void displayContactRow(size_t index);
+		void displayContact(void);
 };
-
-Contacts::Contacts(/* args */)
-{
-}
-
-Contacts::~Contacts()
-{
-}
-
 
 #endif
