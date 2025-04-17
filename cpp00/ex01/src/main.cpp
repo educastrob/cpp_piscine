@@ -6,35 +6,37 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:58:17 by educastro         #+#    #+#             */
-/*   Updated: 2025/04/15 18:09:56 by educastro        ###   ########.fr       */
+/*   Updated: 2025/04/17 18:26:57 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int	main(void) {
-	PhoneBook	phoneBook;
-	std::string input;
-	
-	std::cout << "---------- Welcome to the PhoneBook ----------" << std::endl;
+int main(void) {
+    PhoneBook phoneBook;
+    std::string input;
 
-	while (true) {
-		std::cout << "Valid commands: ADD, SEARCH, EXIT" << std::endl;
-		std::cin >> input;
+    std::cout << BLUE << "---------- Welcome to the PhoneBook! ----------"
+              << RESET << std::endl;
 
-		if (input == "ADD") {
-			phoneBook.addContact(); // needs
-			std::cout << "Adding contact..." << std::endl;
-		} else if (input == "SEARCH") {
-			phoneBook.searchContact(); // needs
-			std::cout << "Searching contact..." << std::endl;
-		} else if (input == "EXIT") {
-			std::cout << "Exiting PhoneBook. Goodbye!" << std::endl;
-			break;
-		} else {
-			std::cout << "Invalid command. Please try again." << std::endl;
-		}
-	}
+    while (true) {
+        std::cout << GREEN << "Valid commands: ADD, SEARCH, EXIT" << RESET
+                  << std::endl;
+        std::cout << YELLOW << "Please enter a command: " << RESET;
+        std::cin >> input;
 
-	return EXIT_SUCCESS;
+        if (input == "EXIT") {
+            std::cout << MAGENTA << "Bye!" << RESET << std::endl;
+            return (EXIT_SUCCESS);
+        } else if (input == "ADD") {
+            phoneBook.addContact();
+        } else if (input == "SEARCH") {
+            phoneBook.searchContact();
+        } else {
+            std::cout << RED << "Invalid command, please try again." << RESET
+                      << std::endl
+                      << std::endl;
+        }
+    }
+    return (EXIT_SUCCESS);
 }

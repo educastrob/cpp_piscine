@@ -6,76 +6,85 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:43:40 by educastro         #+#    #+#             */
-/*   Updated: 2025/04/15 20:46:46 by educastro        ###   ########.fr       */
+/*   Updated: 2025/04/17 18:27:12 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) { contactCount = 0; return; }
+static void printTableHead(void);
+static Contact createNewContact(void);
+
+PhoneBook::PhoneBook(void) {
+    contactCount = 0;
+    return;
+}
+
 PhoneBook::~PhoneBook(void) { return; }
 
-static Contact createNewContact(void) {
-	std::string firstName;
-	std::string lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
-
-	std::cout << std::endl << "Add a contact: " << std::endl;
-	std::cout << "First name: " << std::endl;
-	std::cin >> firstName;
-	std::cout << "Last name: " << std::endl;
-	std::cin >> lastName;
-	std::cout << "Nickname: " << std::endl;
-	std::cin >> nickname;
-	std::cout << "Phone number: " << std::endl;
-	std::cin >> phoneNumber;
-	std::cout << "Darkest secret: " << std::endl;
-	std::cin >> darkestSecret;
-	std::cout << std::endl;
-
-	return (Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
-}
-
-static void	printTableHead(void) {
-	std::cout << std::endl << "---------------------------------------------" << std::endl;
-	std::cout << "|" << std::setw(10) << "Index" << "|"
-			<< std::setw(10) << "First name" << "|"
-			<< std::setw(10) << "Last name" << "|"
-			<< std::setw(10) << "Nickname" << "|";
-	std::cout << std::endl << "---------------------------------------------" << std::endl;
-}
-
 void PhoneBook::addContact(void) {
-	Contact newContact = createNewContact();
-	if (contactCount < 8) {
-		contacts[contactCount++] = newContact;
-	} else {
-		for (size_t i = 0; i < 8 - 1; i++)
-			contacts[i] = contacts[i + 1];
-		contacts[8 - 1] = newContact;
-	}
+    Contact newContact = createNewContact();
+    if (contactCount < MAX_CONTACTS) {
+        contacts[contactCount++] = newContact;
+    } else {
+        for (size_t i = 0; i < MAX_CONTACTS - 1; i++)
+            contacts[i] = contacts[i + 1];
+        contacts[MAX_CONTACTS - 1] = newContact;
+    }
 }
 
 void PhoneBook::searchContact(void) {
-	size_t	index;
+    size_t index;
 
-	if (contactCount == 0) {
-		std::cout << "No contacts to display." << std::endl << std::endl;
-		return;
-	}
+    if (contactCount == 0) {
+        std::cout << RED << "No contacts to display." << RESET << std::endl
+                  << std::endl;
+        return;
+    }
 
-	printTableHead();
+    printTableHead();
+    for (size_t i = 0; i < contactCount; i++) contacts[i].displayContactRow(i);
+    std::cout << DASH << std::endl;
 
-	for (size_t i = 0; i < contactCount; i++)
-		contacts[i].displayContactRow(i);
-	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "Enter the index of the contact you want to display: ";
-	std::cin >> index;
-	if (index < contactCount) {
-		contacts[index].displayContact();
-	} else {
-		std::cout << "Invalid index." << std::endl << std::endl;
-	}
+    std::cout << YELLOW
+              << "Enter the index of the contact you want to display: "
+              << RESET;
+    std::cin >> index;
+    if (index < contactCount) {
+        contacts[index].displayContact();
+    } else {
+        std::cout << RED << "Invalid index." << RESET << std::endl << std::endl;
+    }
+}
+
+static Contact createNewContact(void) {
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string phoneNumber;
+    std::string darkestSecret;
+
+    std::cout << std::endl << MAGENTA << "Add a contact" << RESET << std::endl;
+    std::cout << YELLOW << "First name: " << RESET;
+    std::cin >> firstName;
+    std::cout << YELLOW << "Last name: " << RESET;
+    std::cin >> lastName;
+    std::cout << YELLOW << "Nickname: " << RESET;
+    std::cin >> nickname;
+    std::cout << YELLOW << "Phone number: " << RESET;
+    std::cin >> phoneNumber;
+    std::cout << YELLOW << "Darkest secret: " << RESET;
+    std::cin >> darkestSecret;
+    std::cout << std::endl;
+
+    return (Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
+}
+
+static void printTableHead(void) {
+    std::cout << std::endl << DASH << std::endl;
+    std::cout << "|" << BLUE << std::setw(10) << "Index" << RESET << "|" << BLUE
+              << std::setw(10) << "First name" << RESET << "|" << BLUE
+              << std::setw(10) << "Last name" << RESET << "|" << BLUE
+              << std::setw(10) << "Nickname" << RESET << "|" << std::endl;
+    std::cout << DASH << std::endl;
 }
