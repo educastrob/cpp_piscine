@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
+/*   By: edcastro <edcastro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:43:44 by educastro         #+#    #+#             */
-/*   Updated: 2025/04/17 18:33:30 by educastro        ###   ########.fr       */
+/*   Updated: 2025/04/17 21:52:26 by edcastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <limits>
+
 
 #define RESET "\033[0m"
 #define RED "\033[31m"
