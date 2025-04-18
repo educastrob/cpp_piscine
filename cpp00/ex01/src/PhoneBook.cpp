@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:43:40 by educastro         #+#    #+#             */
-/*   Updated: 2025/04/17 18:27:12 by educastro        ###   ########.fr       */
+/*   Updated: 2025/04/17 21:32:38 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,36 @@ void PhoneBook::addContact(void) {
 }
 
 void PhoneBook::searchContact(void) {
-    size_t index;
+	size_t index;
 
-    if (contactCount == 0) {
-        std::cout << RED << "No contacts to display." << RESET << std::endl
-                  << std::endl;
-        return;
-    }
+	if (contactCount == 0) {
+		std::cout << RED << "No contacts to display." << RESET << std::endl
+				  << std::endl;
+		return;
+	}
 
-    printTableHead();
-    for (size_t i = 0; i < contactCount; i++) contacts[i].displayContactRow(i);
-    std::cout << DASH << std::endl;
+	printTableHead();
+	for (size_t i = 0; i < contactCount; i++) contacts[i].displayContactRow(i);
+	std::cout << DASH << std::endl;
 
-    std::cout << YELLOW
-              << "Enter the index of the contact you want to display: "
-              << RESET;
-    std::cin >> index;
-    if (index < contactCount) {
-        contacts[index].displayContact();
-    } else {
-        std::cout << RED << "Invalid index." << RESET << std::endl << std::endl;
-    }
+	std::cout << YELLOW
+			  << "Enter the index of the contact you want to display (0-7): "
+			  << RESET;
+
+	if (!(std::cin >> index) || index < 0 || index > 7) {
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << RED << "Invalid index. Please enter a number between 0 and 7."
+				  << RESET << std::endl
+				  << std::endl;
+		return;
+	}
+
+	if (index < contactCount) {
+		contacts[index].displayContact();
+	} else {
+		std::cout << RED << "Invalid index." << RESET << std::endl << std::endl;
+	}
 }
 
 static Contact createNewContact(void) {
