@@ -19,7 +19,7 @@ NOVISU 	= 0 # 1 = no progress bar usefull when tty is not available
 FILE_EXTENSION	= .cpp
 SRCS_PATH		= ./src
 INCLUDE_PATH	= ./include
-SRCS			= ClapTrap.cpp
+SRCS			= ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 MAIN			= main.cpp
 
 ################################################################################
