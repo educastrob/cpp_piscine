@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edcastro <edcastro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 23:19:20 by edcastro          #+#    #+#             */
-/*   Updated: 2025/04/30 23:19:20 by edcastro         ###   ########.fr       */
+/*   Created: 2025/04/30 23:22:52 by edcastro          #+#    #+#             */
+/*   Updated: 2025/04/30 23:22:53 by edcastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include <string>
+#include "WrongAnimal.hpp"
 
-class Animal {
-   protected:
-    std::string type;
-
+class WrongCat : public WrongAnimal {
    public:
     // Constructors
-    Animal();
-    Animal(const Animal &copy);
+    WrongCat();
+    WrongCat(WrongCat const &copy);
 
     // Destructor
-    virtual ~Animal();
+    ~WrongCat();
 
     // Operators
-    Animal &operator=(const Animal &assign);
-
+    WrongCat &operator=(const WrongCat &assign);
     // Getters
     std::string getType() const;
 
     // Menber functions
-    virtual void makeSound() const;
+    void makeSound() const;
 };
 
-#endif  // ANIMAL_HPP
+#endif  // WRONGCAT_HPP

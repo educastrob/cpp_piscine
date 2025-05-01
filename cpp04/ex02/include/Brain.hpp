@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edcastro <edcastro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 23:19:20 by edcastro          #+#    #+#             */
-/*   Updated: 2025/04/30 23:19:20 by edcastro         ###   ########.fr       */
+/*   Created: 2025/04/30 23:22:30 by edcastro          #+#    #+#             */
+/*   Updated: 2025/04/30 23:22:31 by edcastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef Brain_HPP
+#define Brain_HPP
 
 #include <string>
 
-class Animal {
-   protected:
-    std::string type;
+class Brain {
+   private:
+    std::string ideas[100];
 
    public:
     // Constructors
-    Animal();
-    Animal(const Animal &copy);
+    Brain();
+    Brain(const Brain &copy);
 
     // Destructor
-    virtual ~Animal();
+    virtual ~Brain();
 
     // Operators
-    Animal &operator=(const Animal &assign);
-
-    // Getters
-    std::string getType() const;
-
-    // Menber functions
-    virtual void makeSound() const;
+    Brain &operator=(const Brain &assign);
 };
 
-#endif  // ANIMAL_HPP
+#endif  // Brain_HPP

@@ -5,7 +5,7 @@
 
 NAME	= animal
 CC 		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= edcastro
 DATE	= 15/04/2024
@@ -19,7 +19,7 @@ NOVISU 	= 0 # 1 = no progress bar usefull when tty is not available
 FILE_EXTENSION	= .cpp
 SRCS_PATH		= ./src
 INCLUDE_PATH	= ./include
-SRCS			= Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS			= AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 MAIN			= main.cpp
 
 ################################################################################

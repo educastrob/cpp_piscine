@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edcastro <edcastro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 23:19:20 by edcastro          #+#    #+#             */
-/*   Updated: 2025/04/30 23:19:20 by edcastro         ###   ########.fr       */
+/*   Created: 2025/04/30 23:19:24 by edcastro          #+#    #+#             */
+/*   Updated: 2025/04/30 23:19:25 by edcastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <string>
+#include "Animal.hpp"
 
-class Animal {
-   protected:
-    std::string type;
-
+class Cat : public Animal {
    public:
     // Constructors
-    Animal();
-    Animal(const Animal &copy);
+    Cat();
+    Cat(const Cat &copy);
 
     // Destructor
-    virtual ~Animal();
+    ~Cat();
 
     // Operators
-    Animal &operator=(const Animal &assign);
-
-    // Getters
-    std::string getType() const;
+    Cat &operator=(const Cat &assign);
 
     // Menber functions
-    virtual void makeSound() const;
+    void makeSound(void) const;
 };
 
-#endif  // ANIMAL_HPP
+#endif  // CAT_HPP
