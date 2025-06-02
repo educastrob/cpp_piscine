@@ -19,7 +19,7 @@ NOVISU 	= 0 # 1 = no progress bar usefull when tty is not available
 FILE_EXTENSION	= .cpp
 SRCS_PATH		= ./src
 INCLUDE_PATH	= ./include
-SRCS			= Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRCS			= Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 MAIN			= main.cpp
 
 ################################################################################
