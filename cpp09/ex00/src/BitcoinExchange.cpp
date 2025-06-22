@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 16:36:44 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/22 16:36:45 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 17:14:23 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iostream>
 #include <sstream>
 
+//Constructor
 BitcoinExchange::BitcoinExchange() {
     std::ifstream inputFile(DATA_FILE);
 
@@ -72,19 +73,23 @@ BitcoinExchange::BitcoinExchange() {
     inputFile.close();
 }
 
+// Copy
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy) {
     *this = copy;
 }
 
+//Destructor
 BitcoinExchange::~BitcoinExchange() {
 }
 
+// Operator
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &assign) {
     if (this == &assign) return *this;
     exchangeRates = assign.exchangeRates;
     return *this;
 }
 
+// Methods
 void BitcoinExchange::queryExchangeRate(const std::string &queyFile) const {
     std::ifstream inputFile(queyFile.c_str());
 
