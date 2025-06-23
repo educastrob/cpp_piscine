@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 22:09:52 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/22 21:43:30 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 21:49:56 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,7 @@ int Span::longestSpan() const {
     return *maxIt - *minIt;
 }
 
-void Span::addRange(int values[], unsigned int size)
-{
+void Span::addRange(int values[], unsigned int size) {
     try {
         for (size_t i = 0; i < size; i++)
             addNumber(values[i]);
