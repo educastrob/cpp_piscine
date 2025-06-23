@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 22:09:50 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/20 01:08:26 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 21:45:26 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main() {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
+
     std::cout << std::endl
               << "==== Random test with larger span ====" << std::endl;
     try {
@@ -53,6 +54,25 @@ int main() {
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
+
+
+	std::cout << std::endl
+		<< "==== Test with range of iterators ====" << std::endl;
+	try {
+		Span bigSpan(100000);
+		int values[100000];
+		srand(static_cast<unsigned>(time(NULL)));
+		for (int i = 0; i < 100000; ++i)
+			values[i] = generateRandomNumber(1, 1000000);
+
+		bigSpan.addRange(values, 100000);
+		std::cout << "Big span shortest: " << bigSpan.shortestSpan() << std::endl;
+		std::cout << "Big span longest: " << bigSpan.longestSpan() << std::endl;
+		std::cout << "Trying to add number 100001 to span." << std::endl;
+		bigSpan.addNumber(1);
+	} catch (const std::exception &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
 }
 
 int generateRandomNumber(int min, int max) {

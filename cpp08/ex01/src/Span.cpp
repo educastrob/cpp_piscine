@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 22:09:52 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/19 22:10:12 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 21:43:30 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <algorithm>
 #include <iostream>
+
 
 // Constructors
 Span::Span() : size(0) {}
@@ -81,4 +82,14 @@ int Span::longestSpan() const {
     std::vector<int>::const_iterator maxIt = std::max_element(this->numbers.begin(), this->numbers.end());
 
     return *maxIt - *minIt;
+}
+
+void Span::addRange(int values[], unsigned int size)
+{
+    try {
+        for (size_t i = 0; i < size; i++)
+            addNumber(values[i]);
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
 }

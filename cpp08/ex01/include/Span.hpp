@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 22:09:40 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/19 23:00:03 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 21:27:06 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <stdexcept>
+#include <algorithm>
 
 class Span {
    private:
@@ -36,6 +38,8 @@ class Span {
     void addNumber(int number);
     int shortestSpan() const;
     int longestSpan() const;
+
+	void addRange(int values[], unsigned int size);
 };
 
 #endif  // SPAN_HPP
