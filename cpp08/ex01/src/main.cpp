@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 22:09:50 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/22 21:45:26 by educastro        ###   ########.fr       */
+/*   Updated: 2025/06/22 21:48:54 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main() {
 
 
 	std::cout << std::endl
-		<< "==== Test with range of iterators ====" << std::endl;
+			<< "==== Test with range of iterators ====" << std::endl;
 	try {
 		Span bigSpan(100000);
 		int values[100000];
