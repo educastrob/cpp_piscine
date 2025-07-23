@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:44:00 by educastro         #+#    #+#             */
-/*   Updated: 2025/07/18 16:11:31 by educastro        ###   ########.fr       */
+/*   Updated: 2025/07/23 20:07:30 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,11 @@ void PmergeMe::sort(std::vector<int> &vector) {
     std::vector<std::pair<int, int> > pairs;
     int straggler = -1;
 
-    // If the vector has an odd number of elements, save the last element
     if (vector.size() % 2 != 0) {
         straggler = vector.back();
         vector.pop_back();
     }
 
-    // Create pairs of elements and sort them
     pairs.reserve(vector.size() / 2);
     for (size_t i = 0; i < vector.size(); i += 2) {
         if (vector[i] < vector[i + 1]) {
@@ -67,20 +65,16 @@ void PmergeMe::sort(std::vector<int> &vector) {
         }
     }
 
-    // Sort the pairs by the second element
     PmergeMe::insertionSort<std::vector<std::pair<int, int> > >(pairs);
 
-    // Rebuild the vector with the second element of each pair
     vector.clear();
     vector.reserve((pairs.size() * 2) + (straggler != -1 ? 1 : 0));
     for (size_t i = 0; i < pairs.size(); i++) {
         vector.push_back(pairs[i].second);
     }
 
-    // Insert the first element in front of the vector
     vector.insert(vector.begin(), pairs.front().first);
 
-    // Create insertion sequence and insert the first element of each pair
     std::vector<size_t> indexs;
     PmergeMe::generateInsertionSequence(pairs.size() - 1, indexs);
     for (size_t i = 0; i < indexs.size(); i++) {
@@ -88,7 +82,6 @@ void PmergeMe::sort(std::vector<int> &vector) {
         vector.insert(vector.begin() + pos, pairs[i + 1].first);
     }
 
-    // Insert the straggler if it exists
     if (straggler != -1) {
         size_t pos = PmergeMe::binarySearchPosition(vector, vector.size() / 2, straggler);
         vector.insert(vector.begin() + pos, straggler);
