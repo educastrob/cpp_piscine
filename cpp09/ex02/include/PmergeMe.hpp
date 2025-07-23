@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:43:55 by educastro         #+#    #+#             */
-/*   Updated: 2025/07/17 21:04:14 by educastro        ###   ########.fr       */
+/*   Updated: 2025/07/17 21:42:00 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class PmergeMe {
     static size_t binarySearchPosition(const std::deque<int> &deque, size_t initialIndex, int x);
 
     static void generateInsertionSequence(size_t maxIndex, std::deque<size_t> &sequence);
+
+
 
    public:
     static void sort(std::vector<int> &vector);

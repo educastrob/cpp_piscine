@@ -6,7 +6,7 @@
 /*   By: educastro <educastro@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 18:43:57 by educastro         #+#    #+#             */
-/*   Updated: 2025/06/22 18:44:46 by educastro        ###   ########.fr       */
+/*   Updated: 2025/07/17 21:40:54 by educastro        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
         return (1);
     }
 
-    // // Print Jacobsthal insertion sequence
+    // Print Jacobsthal insertion sequence
     // std::vector<size_t> sequence;
     // PmergeMe::generateInsertionSequence(12, sequence);
     // std::cout << "Sequence: ";
